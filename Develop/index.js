@@ -4,6 +4,11 @@ const fs = require("fs");
 
 inquirer
     .prompt([{
+        type:"input",
+        name:"projectTitle",
+        message:"What is the title of your project?",
+    },
+    {
         type: "input",
         name: "username",
         message: "What is your GitHub Username?",
@@ -44,8 +49,25 @@ inquirer
     }])
 
     .then(response => {
-        
+        console.log(response.username);
+        console.log(response.title);
+        console.log(response.description);
+        console.log(response.license);
+        console.log(response.installation);
+        console.log(response.test);
+        console.log(response.contribution);
 
-    })
+ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    })  
+
 
 
