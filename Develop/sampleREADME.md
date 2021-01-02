@@ -1,8 +1,8 @@
 # **undefined**
-        # Readme
+        # Read me 
         ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
         ## Description
-          it is a readme genrator
+          a read me generator
          ## Table of Contents
           *[Installation](#installation)
           *[Usage](#usage)
@@ -13,7 +13,7 @@
           
         ## Installation
         To install necessary dependencies, run the following command:
-            command line porject
+            no
         ## Usage
         undefined
         ## License
@@ -26,5 +26,5 @@
         ## Questions
     
         If you have any questions about the repo, open an issue or contact@
-        [rowOliver]r.oliver.yoga@gmail.com
+        [Rowan Oliver]r.oliver.yoga@gmail.com
           
