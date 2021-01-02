@@ -49,25 +49,68 @@ inquirer
     }])
 
     .then(response => {
+        console.log(response.projectTitle);
         console.log(response.username);
         console.log(response.title);
         console.log(response.description);
         console.log(response.license);
         console.log(response.installation);
         console.log(response.test);
-        console.log(response.contribution);
+        console.log(response.contribution);  
+        
 
- 
+    }); 
+
+    const generateMarkdown = (data, email) => {
+        console.log(data)
+        return `
+        # ${data.title}
+        ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
+        ## Description
+          ${data.description}
+         ## Table of Contents
+          *[Installation](#installation)
+          *[Usage](#usage)
+          *[License](#license)
+          *[Contributing](#contributing)
+          *[Tests](#tests)
+          *[Questions](#questions)
+          
+        ## Installation
+        To install necessary dependencies, run the following command:
+            ${data.installation}
+        ## Usage
+        ${data.usage}
+        ## License
+        This project is licensed under the ${data.usage} license.
+        ## Contributing
+        ${data.contributing}
+        ## Tests
+        To run tests, run the following command:
+            ${data.tests}
+        ## Questions
+    
+        If you have any questions about the repo, open an issue or contact@
+        [${data.username}]${email}
+          `
+          fs.writeFile('readme.md', page, (err) => {
+              if(err) console.log("failed to write file");
+              else console.log("wrote file");
+
+          })
+        };
+
+
+
+
         
         
         
         
         
-        
-        
-        
-        
-    })  
+     
+    
+
 
 
 
