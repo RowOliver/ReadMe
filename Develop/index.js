@@ -24,6 +24,10 @@ inquirer
         message:"Please enter a short description of your project",
 
     },
+    {   type: "input",
+        name:"email",
+        message:"What is your email?",
+    },
     {
         type: "input",
         name: "license",
@@ -46,6 +50,9 @@ inquirer
         type: "input",
         name: "contribution",
         message: "Please define any contributions made by the user or other developers",
+    
+
+        
     }])
 
     .then(response => {
@@ -59,15 +66,14 @@ inquirer
         console.log(response.contribution);  
         
 
-    }); 
+    
 
-    const generateMarkdown = (data, email) => {
-        console.log(data)
-        return `
-        # ${data.title}
+    
+    let page = `# **${response.projectName}**
+        # ${response.title}
         ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
         ## Description
-          ${data.description}
+          ${response.description}
          ## Table of Contents
           *[Installation](#installation)
           *[Usage](#usage)
@@ -78,27 +84,27 @@ inquirer
           
         ## Installation
         To install necessary dependencies, run the following command:
-            ${data.installation}
+            ${response.installation}
         ## Usage
-        ${data.usage}
+        ${response.usage}
         ## License
-        This project is licensed under the ${data.usage} license.
+        This project is licensed under the ${response.usage} license.
         ## Contributing
-        ${data.contributing}
+        ${response.contributing}
         ## Tests
         To run tests, run the following command:
-            ${data.tests}
+            ${response.tests}
         ## Questions
     
         If you have any questions about the repo, open an issue or contact@
-        [${data.username}]${email}
+        [${response.username}]${response.email}
           `
           fs.writeFile('readme.md', page, (err) => {
               if(err) console.log("failed to write file");
               else console.log("wrote file");
 
           })
-        };
+});
 
 
 
