@@ -99,7 +99,7 @@ inquirer
         If you have any questions about the repo, open an issue or contact@
         [${response.username}]${response.email}
           `
-          fs.writeFile('readme.md', page, (err) => {
+          fs.writeFile('sampleREADMe.md', page, (err) => {
               if(err) console.log("failed to write file");
               else console.log("wrote file");
 
